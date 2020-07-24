@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Desafio 4</title>
+</head>
+
+<body>
+    <script>
+
+        var nomes = [
+            "Diego",
+            "Gabriel",
+            "Lucas"
+        ];
+
+        var containerElement = document.querySelector('body');
+
+        var inputElement = document.createElement('input');
+        inputElement.setAttribute('type', 'text');
+        inputElement.setAttribute('name', 'nome');
+
+        var buttonElement = document.createElement('button');
+        var buttonText = document.createTextNode('Adicionar');
+        buttonElement.appendChild(buttonText);
+
+        var ulElement = document.createElement('ul');
+
+        for (var nome of nomes) {
+            var liElement = document.createElement('li');
+            var liText = document.createTextNode(nome);
+
+            liElement.appendChild(liText);
+            ulElement.appendChild(liElement);
+        }
+
+        buttonElement.onclick = function () {            
+            var liElement = document.createElement('li');
+            var valueInput = document.querySelector('input').value;
+            var inputText = document.createTextNode(valueInput);
+
+            liElement.appendChild(inputText);
+            ulElement.appendChild(liElement);
+
+            document.querySelector('input').value = ' ';
+        }
+
+        containerElement.appendChild(inputElement);
+        containerElement.appendChild(buttonElement);
+        containerElement.appendChild(ulElement);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Desafio 2</title>
+</head>
+
+<body>
+    <script>
+
+        var containerElement = document.querySelector('body');
+
+        var buttonElement = document.createElement('button');
+        var buttonText = document.createTextNode('Criar quadrado');
+        buttonElement.setAttribute('onclick', 'quadrado()');
+        buttonElement.appendChild(buttonText);
+        
+        containerElement.appendChild(buttonElement);
+
+        buttonElement.onclick = function () {
+            var quadradoElement = document.createElement('div');
+            quadradoElement.style.width = '100px';
+            quadradoElement.style.height = '100px';
+            quadradoElement.style.backgroundColor = '#F00';
+
+            quadradoElement.onmouseover = function () {
+                quadradoElement.style.backgroundColor = getRandomColor();
+            }
+
+            containerElement.appendChild(quadradoElement);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+    </script>
+</body>
+
+</html>

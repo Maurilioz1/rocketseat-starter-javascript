@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Desafio 5</title>
+</head>
+
+<body>
+    <script>
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: [
+                    "Javascript",
+                    "ReactJS",
+                    "Redux"
+                ]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: [
+                    "VueJS",
+                    "Ruby on Rails",
+                    "Elixir"
+                ]
+            }
+        ];
+
+        function habilidades(usuarios) {
+            for (var usuario of usuarios) {
+                console.log('O ' + usuario.nome + ' possui as habilidades: ' + usuario.habilidades.join(', '))
+            }
+        }
+
+        habilidades(usuarios);
+        
+    </script>
+</body>
+
+</html>

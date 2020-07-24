@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Desafio 1</title>
+</head>
+
+<body>
+    <script>
+
+        var containerElement = document.querySelector('body');
+
+        var buttonElement = document.createElement('button');
+        var buttonText = document.createTextNode('Criar quadrado');
+        buttonElement.setAttribute('onclick', 'quadrado()');
+
+        buttonElement.appendChild(buttonText);
+        containerElement.appendChild(buttonElement);
+
+        buttonElement.onclick = function () {
+            var quadradoElement = document.createElement('div');
+            quadradoElement.style.width = '100px';
+            quadradoElement.style.height = '100px';
+            quadradoElement.style.backgroundColor = '#F00';
+            
+            containerElement.appendChild(quadradoElement);
+        }
+
+    </script>
+</body>
+
+</html>

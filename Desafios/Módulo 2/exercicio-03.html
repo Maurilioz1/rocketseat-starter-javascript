@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Desafio 3</title>
+</head>
+
+<body>
+    <script>
+
+        var nomes = [
+            "Diego",
+            "Gabriel",
+            "Lucas"
+        ];
+
+        var containerElement = document.querySelector('body');
+
+        var ulElement = document.createElement('ul');
+
+        for (var nome of nomes) {
+            var liElement = document.createElement('li');
+            var liText = document.createTextNode(nome);
+
+            liElement.appendChild(liText);
+            ulElement.appendChild(liElement);
+        }
+
+        containerElement.appendChild(ulElement);
+
+    </script>
+</body>
+
+</html>
